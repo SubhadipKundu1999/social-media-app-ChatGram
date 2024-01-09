@@ -1,7 +1,6 @@
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
@@ -24,12 +23,9 @@ export default {
   },
 }
 ```
-
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-
-
 
 # steps
 1. create a vite project
@@ -49,14 +45,27 @@ export default {
 15. In every project we will have some secret variable, so for that now set up ```.env``` file
 16. inside ```root``` derectry create a ```.env.local``` file , now as it is a ```vite project``` to use ```.env ``` create ```.vite-env.d.ts``` file inside ```src``` folder and write ```/// <reference types="vite/client" />``` 
 now when ever we want a variable use like ```import.meta.env.VARIABLE_NAME```
-17. ### configure ```APPWRITE```:
+17.  inside ```src ``` make a folder which contain types for all project variable ```src->types -> index.ts```
+
+18. ### configure ```APPWRITE```:
   - sigin up in appwrite 
   - create a project which wii give a project id
   - store project id and url in ```.env``` file
   - create a folder inside ```lib``` folder named ```appwrite```
   - make to file inside it ```config.ts``` and ```api.ts```
   - now  config apperite and create api for sign up form submission.
-  - inside ```src ``` make a folder which contain types for all project variable ```src->types -> index.ts```
+  - create a new bucket in appwrite inside our project which will generate a stroge id add to ```.env```
+  - create a new database in appwrite inside our project which will generate a database id add to ```.env```
+  - inside database create all collections like 'Posts' 'Users' , 'Saves'.
+  - goto each collection-> seting-> permission and add any then check for all CRUD -> Update
 
-
+19. ## Storage and design  databases
+  - create a new bucket in appwrite inside our project which will generate a stroge id add to ```.env```
+  - create a new database in appwrite inside our project which will generate a database id add to ```.env```
+  - inside database create all collections like 'Posts' 'Users' , 'Saves'.
+  - goto each collection-> seting-> permission and add any then check for all CRUD -> Update
+  - now make one bye one attribute for all collection
+  - set relationship b/w two collections
+  - to easily visualize create a flowchart of various collections and their attributes and relationships.
+  - add all collections id to ```.env ``` file and configure them in ```config.ts``` file
 
